@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  Targetting the dot Classes   */
+.slick-dots li.slick-active button:before {
+  color: #ec3242 !important;
+}
+
+.slick-dots li button:before {
+  margin-top: 40px;
+  font-size: 10px;
+  color: #ec3242;
+}
+
+/* Maintaining the gap between cards  */
+
+.slick-slide > div {
+  margin: 0 20px;
+}
+
+/*  Adjusting the slider buttons  */
+.slick-prev:before,
+.slick-next:before {
+  color: #ec3242;
+  font-size: 3rem;
+  font-weight: bolder;
+  z-index: 10;
+}
+
+.slick-prev {
+  left: -50px;
+  z-index: 1000;
+}
+
+.slick-next {
+  right: -50px;
+  z-index: 1000;
+}
+
+/* Adjusting the center card component and other cards   */
+
+.slick-center .card {
+  transform: scale(1.04);
+  z-index: 1;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slick-slide:not(.slick-center) .card {
+  transform: scale(0.85);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.slick-list {
+  overflow: visible !important;
+}
+
+/* Add some media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .slick-prev {
+    left: -40px;
+  }
+
+  .slick-next {
+    right: -20px;
+  }
+  .slick-dots li button:before {
+    margin: 1.6rem 0;
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
+
+  .slick-dots li button:before {
+    margin-top: 20px;
+  }
+}
